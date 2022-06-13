@@ -1,7 +1,9 @@
 package com.app.domain.dto;
 
 import java.io.Serializable;
+import java.util.List;
 
+import com.app.domain.Categoria;
 import com.app.domain.Produto;
 
 public class ProdutoDTO implements Serializable {
@@ -9,6 +11,7 @@ public class ProdutoDTO implements Serializable {
 
 	private Integer id;
 	private String nome;
+	private List<Categoria> categoriaId;
 
 	public ProdutoDTO() {
 
@@ -17,6 +20,7 @@ public class ProdutoDTO implements Serializable {
 public ProdutoDTO(Produto obj) {
 		id= obj.getId();
 		nome= obj.getNome();
+		categoriaId = obj.getCategorias();
 	}
 
 	public Integer getId() {
@@ -33,6 +37,14 @@ public ProdutoDTO(Produto obj) {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public List<Categoria> getCategoriaId() {
+		return categoriaId;
+	}
+
+	public void setCategoriaId(List<Categoria> categoriaId) {
+		this.categoriaId = categoriaId;
 	}
 
 }
